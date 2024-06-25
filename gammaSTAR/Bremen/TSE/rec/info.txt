@@ -1,2 +1,7 @@
-Raw data files were converted to ISMRMRD format using siemens_to_ismrmrd (https://github.com/ismrmrd/siemens_to_ismrmrd)
+Raw data were converted to ISMRMRD format using siemens_to_ismrmrd (https://github.com/ismrmrd/siemens_to_ismrmrd)
+
+Raw data file raw_TSE.mrd is hosted here: https://owncloud.fraunhofer.de/index.php/s/igQgSVyBLYR2fC2
+
 Reconstruction was performed using gadgetron with following config file: Generic_Cartesian_Grappa.xml
+
+Reconstructed image file: recon_TSE.h5
