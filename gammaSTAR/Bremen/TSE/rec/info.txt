@@ -1,0 +1,2 @@
+Raw data files were converted to ISMRMRD format using siemens_to_ismrmrd (https://github.com/ismrmrd/siemens_to_ismrmrd)
+Reconstruction was performed using gadgetron with following config file: Generic_Cartesian_Grappa.xml

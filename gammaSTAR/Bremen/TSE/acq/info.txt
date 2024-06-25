@@ -1,0 +1,1 @@
+The uploaded json files represent static hardware representations of the sequence. Original gammaSTAR sequence files (including sequence logic to be configurable at the MRI) are available on request or here: https://gamma-star.mevis.fraunhofer.de/RARE_sequence_readonly.html#/
