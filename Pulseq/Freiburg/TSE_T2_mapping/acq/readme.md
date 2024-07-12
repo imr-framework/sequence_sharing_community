@@ -1,0 +1,1 @@
+The T2_mapping_raw_data is too big to upload to Github. Please download from dropbox via [this link](https://www.dropbox.com/scl/fi/d00nv7bwistjdsd4xz4sx/T2_mapping_raw_data.mat?rlkey=dcsyzdaips888qwte7a25o2wu&st=4zhdb716&dl=0). 
