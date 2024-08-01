@@ -18,14 +18,16 @@ function [fitresult, gof] = createFitT2(TE, y_data)
 [xData, yData] = prepareCurveData( TE, y_data );
 
 % Set up fittype and options.
-ft = fittype( 'a*exp(-x/b)+c', 'independent', 'x', 'dependent', 'y' );
+% ft = fittype( 'a*exp(-x/b)+c', 'independent', 'x', 'dependent', 'y' );
+ft = fittype( 'a*exp(-x/b)', 'independent', 'x', 'dependent', 'y' );
 opts = fitoptions( 'Method', 'NonlinearLeastSquares' );
 opts.Display = 'Off';
-opts.StartPoint = [0.915735525189067 0.792207329559554 0.512779629734432];
+% opts.StartPoint = [0.915735525189067 0.792207329559554 0.512779629734432];
+opts.StartPoint = [1 0.6];
 
 % Fit model to data.
 opts.Lower = [0 0];
-opts.Upper = [10 6];
+% opts.Upper = [10 6];
 [fitresult, gof] = fit( xData, yData, ft, opts );
 
 % % Plot fit with data.
