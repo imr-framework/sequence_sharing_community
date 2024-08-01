@@ -1,47 +1,55 @@
 %% Reconstruct T2 mapping images 
 clear; clc 
 
-k=13
+k=16
 volume = zeros(128, 512, 24);
-% for k = 1:24
-    fileName = sprintf('dicom80ms/series00700#000%02d.dcm', k);
-    [spect map] = dicomread(fileName); 
-    size(spect);
-    spect80ms = squeeze(spect);
-    % volume80ms(:,:,k) = spect;
-% end
 
-% volume60ms = zeros(128, 128, 24);
-% for k = 1:24
-    fileName = sprintf('dicom60ms/series00900#000%02d.dcm', k);
-    [spect map] = dicomread(fileName); 
-    size(spect);
-    spect60ms = squeeze(spect);
-    % volume60ms(:,:,k) = spect;
-% end
 
-% volume40ms = zeros(128, 128, 24);
-% for k = 1:24
-    fileName = sprintf('dicom40ms/series01000#000%02d.dcm', k);
-    [spect map] = dicomread(fileName); 
-    size(spect);
-    spect40ms = squeeze(spect);
-    % volume40ms(:,:,k) = spect;
-% end
-
-% volume20ms = zeros(128, 128, 24);
-% for k = 1:24
-    fileName = sprintf('dicom20ms/series01100#000%02d.dcm', k);
-    [spect map] = dicomread(fileName); 
-    size(spect);
-    spect20ms = squeeze(spect);
-    % volume20ms(:,:,k) = spect;
-    slice = cat(3, spect80ms, spect60ms, spect40ms, spect20ms)
-    % volume(:,:,k) = slice;
-% end
-
-volume = cat(3, spect80ms, spect60ms, spect40ms, spect20ms)
-montage(mat2gray(slice))
+fileName = sprintf('series01100#00001.result1.dcm');
+[spect map] = dicomread(fileName); 
+size(spect);
+preSlice = cat(3, spect(:,:,:,k), spect(:,:,:,k+24), spect(:,:,:,k+24*2), spect(:,:,:,k+24*3))
+slice = squeeze(preSlice);
+% 
+% % for k = 1:24
+%     fileName = sprintf('dicom80ms/series00700#000%02d.dcm', k);
+%     [spect map] = dicomread(fileName); 
+%     size(spect);
+%     spect80ms = squeeze(spect);
+%     % volume80ms(:,:,k) = spect;
+% % end
+% 
+% % volume60ms = zeros(128, 128, 24);
+% % for k = 1:24
+%     fileName = sprintf('dicom60ms/series00900#000%02d.dcm', k);
+%     [spect map] = dicomread(fileName); 
+%     size(spect);
+%     spect60ms = squeeze(spect);
+%     % volume60ms(:,:,k) = spect;
+% % end
+% 
+% % volume40ms = zeros(128, 128, 24);
+% % for k = 1:24
+%     fileName = sprintf('dicom40ms/series01000#000%02d.dcm', k);
+%     [spect map] = dicomread(fileName); 
+%     size(spect);
+%     spect40ms = squeeze(spect);
+%     % volume40ms(:,:,k) = spect;
+% % end
+% 
+% % volume20ms = zeros(128, 128, 24);
+% % for k = 1:24
+%     fileName = sprintf('dicom20ms/series01100#000%02d.dcm', k);
+%     [spect map] = dicomread(fileName); 
+%     size(spect);
+%     spect20ms = squeeze(spect);
+%     % volume20ms(:,:,k) = spect;
+%     slice = cat(3, spect80ms, spect60ms, spect40ms, spect20ms)
+%     % volume(:,:,k) = slice;
+% % end
+% 
+% volume = cat(3, spect80ms, spect60ms, spect40ms, spect20ms)
+montage(mat2gray(slice(32:64, :, :)))
 title('T2 mapping images')
 save('T2_mapping_images_reconstructed.mat','slice')
 
