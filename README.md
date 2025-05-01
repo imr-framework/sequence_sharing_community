@@ -1,4 +1,4 @@
-# sequence_sharing_community
+# Sequence Sharing Community
 **Community platform for sharing pulse sequence related tests, data and documents by developers and users**
 
 This community driven vendor-agnostic open-source protocols (VOP) framework is intended to expand the acquisition of reproducible MR data by collaboratively, safely, effectively, and ethically sharing magnetic resonance (MR) protocols.  MR protocols require precise control of pulses played on the different coils. The large number of parameters involved in pulse sequence design leads to multiple design iterations before routine use. Throughout the iterations, vendor-specific, arcane pulse programming software tools cause fragmenting of MR protocols. They are often a significant hurdle for collaborating researchers seeking to port state-of-the-art (SOTA) sequences onto new platforms. In the first iteration, the VOP framework will build on and refine the recently demonstrated open-source framework by scaling the framework to more international sites to demonstrate reproducible T1w and T2w MR imaging.  
